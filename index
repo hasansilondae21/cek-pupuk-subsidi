@@ -15,7 +15,7 @@
      (Apps Script: Deploy > Manage deployments > salin "Web app URL", berakhiran /exec). -->
 <iframe id="app" title="Penebusan Pupuk Subsidi" allowfullscreen></iframe>
 <script>
-  var BASE = "GANTI_DENGAN_URL_EXEC";   // contoh: https://script.google.com/macros/s/XXXXXXXX/exec
+  var BASE = "https://script.google.com/macros/s/AKfycby4DhxSTRKLOACJ4to5WZvOxsvOj7PS8RRB2Lm5ClXuh-9ISoXaCBEIQ6TxDEQHuugO/exec";   // contoh: https://script.google.com/macros/s/XXXXXXXX/exec
   // Parameter di tautan GitHub (mis. ?h=daftar&desa=ASAMBU) diteruskan ke aplikasi
   document.getElementById('app').src = BASE + (location.search || '');
 </script>
