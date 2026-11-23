@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Penebusan Pupuk Subsidi — BPP Unaaha</title>
+<meta name="theme-color" content="#1a56a0">
+<style>
+  html,body{margin:0;padding:0;height:100%;overflow:hidden;background:#f1f5f9}
+  iframe{width:100%;height:100vh;height:100dvh;border:none;display:block}
+</style>
+</head>
+<body>
+<!-- GANTI tulisan GANTI_DENGAN_URL_EXEC di bawah dengan URL deployment web app Anda
+     (Apps Script: Deploy > Manage deployments > salin "Web app URL", berakhiran /exec). -->
+<iframe id="app" title="Penebusan Pupuk Subsidi" allowfullscreen></iframe>
+<script>
+  var BASE = "GANTI_DENGAN_URL_EXEC";   // contoh: https://script.google.com/macros/s/XXXXXXXX/exec
+  // Parameter di tautan GitHub (mis. ?h=daftar&desa=ASAMBU) diteruskan ke aplikasi
+  document.getElementById('app').src = BASE + (location.search || '');
+</script>
+</body>
+</html>
