@@ -6,18 +6,29 @@
 <title>Penebusan Pupuk Subsidi — BPP Unaaha</title>
 <meta name="theme-color" content="#1a56a0">
 <style>
-  html,body{margin:0;padding:0;height:100%;overflow:hidden;background:#f1f5f9}
+  html,body{margin:0;padding:0;height:100%;overflow:hidden;background:#f1f5f9;font-family:system-ui,sans-serif}
   iframe{width:100%;height:100vh;height:100dvh;border:none;display:block}
+  .info{padding:24px;text-align:center;color:#334155}
+  .info a{color:#1a56a0;font-weight:600}
 </style>
 </head>
 <body>
-<!-- GANTI tulisan GANTI_DENGAN_URL_EXEC di bawah dengan URL deployment web app Anda
-     (Apps Script: Deploy > Manage deployments > salin "Web app URL", berakhiran /exec). -->
 <iframe id="app" title="Penebusan Pupuk Subsidi" allowfullscreen></iframe>
+<noscript><div class="info">Aktifkan JavaScript, atau <a href="https://script.google.com/macros/s/AKfycby4DhxSTRKLOACJ4to5WZvOxsvOj7PS8RRB2Lm5ClXuh-9ISoXaCBEIQ6TxDEQHuugO/exec">buka aplikasi langsung</a>.</div></noscript>
 <script>
-  var BASE = "https://script.google.com/macros/s/AKfycby4DhxSTRKLOACJ4to5WZvOxsvOj7PS8RRB2Lm5ClXuh-9ISoXaCBEIQ6TxDEQHuugO/exec";   // contoh: https://script.google.com/macros/s/XXXXXXXX/exec
-  // Parameter di tautan GitHub (mis. ?h=daftar&desa=ASAMBU) diteruskan ke aplikasi
-  document.getElementById('app').src = BASE + (location.search || '');
+  var BASE = "https://script.google.com/macros/s/AKfycby4DhxSTRKLOACJ4to5WZvOxsvOj7PS8RRB2Lm5ClXuh-9ISoXaCBEIQ6TxDEQHuugO/exec";
+
+  // MODE "iframe"   : aplikasi tampil di dalam halaman ini (alamat GitHub tetap).
+  // MODE "redirect" : pengunjung langsung dialihkan ke aplikasi. Pakai ini bila iframe diblokir
+  //                   di jaringan/perangkat tertentu ("connection is blocked ... local network").
+  var MODE = "iframe";
+
+  var tujuan = BASE + (location.search || '');   // ?h=daftar&desa=ASAMBU ikut diteruskan
+  if (MODE === "redirect") {
+    location.replace(tujuan);
+  } else {
+    document.getElementById('app').src = tujuan;
+  }
 </script>
 </body>
 </html>
